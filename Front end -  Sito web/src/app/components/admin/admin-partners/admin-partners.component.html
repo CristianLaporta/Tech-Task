@@ -1,0 +1,14 @@
+<h2>Tutti i Partners</h2>
+<div class="slide">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let partners of partners">
+      <div class="card">
+        <img class="card-img-top" [src]="partners.img" alt="Slide image">
+        <div class="card-body">
+          <button type="button" class="btn btn-primary">Modifica</button>
+          <button type="button" class="btn btn-primary">Elimina</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

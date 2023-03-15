@@ -1,0 +1,27 @@
+<img *ngIf="timer" (click)="openClosechat()" id="chat" class="bounce-in-fwd" src="../../../../assets/chat.png"
+  alt="chat">
+<p id="number" class="bounce-in-fwd" *ngIf="timer2">1</p>
+<div *ngIf="chat" class="scale-in-center" id="chatOpen">
+  <div id="chats" class="chat-messages-container">
+    <div class="chat-message-ass scale-in-center">
+      <p class="message-text">sono l'assistente virtuale di Grifo Multimedia. Come posso aiutarti? 😀</p>
+    </div>
+    <div *ngFor="let message of messages">
+      <span *ngIf="message.type == 'received' ">
+        <div class="chat-message-ass ">
+          <p class="message-text">{{message.mess}}</p>
+        </div>
+      </span>
+      <span *ngIf="message.type == 'send' ">
+        <div class="chat-message-user ">
+          <p class="message-text-user">{{message.mess}}</p>
+        </div>
+      </span>
+    </div>
+    <br><br>
+  </div>
+  <img *ngIf="chatmsg" id="spinnerChat" src="../../../../assets/spinnerchat.gif" alt="spinner">
+  <textarea [(ngModel)]="message" name="message" id="message" placeholder="Scrivi qualcosa..." cols="20"
+    rows="1"></textarea>
+  <button (click)="send()" id="invia">Invia</button>
+</div>

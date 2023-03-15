@@ -1,0 +1,146 @@
+.slide-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  h1 {
+    text-shadow: 3px 1px 1px rgba(0, 0, 0, 0.67);
+    font-size: 4.4rem;
+    margin-bottom: 2rem;
+    width: 60%;
+    text-align: left;
+    line-height: 78px;
+  }
+  div {
+    position: absolute;
+    left: 15%;
+  }
+  button {
+    font-family: Cairo, sans-serif;
+    letter-spacing: 1px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.611);
+    background-color: rgb(183, 35, 43);
+    border-color: rgb(183, 35, 43);
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    float: left;
+    opacity: 0.9;
+    transition: opacity 0.2s ease-in-out;
+  }
+  button:hover {
+    background-color: rgb(255, 255, 255);
+    color: #b7232b;
+    opacity: 1;
+  }
+}
+
+#next {
+  position: absolute;
+  top: 45%;
+  z-index: 999;
+}
+
+#prev {
+  position: absolute;
+  top: 45%;
+  right: 0;
+  z-index: 999;
+}
+
+.fade-out {
+  -webkit-animation: fade-out 0.4s ease-out both;
+  animation: fade-out 0.4s ease-out both;
+}
+.fade-in {
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn {
+  background: white;
+  border-radius: 0;
+  padding: 15px;
+}
+@media screen and (max-width: 768px) {
+  .slide-container {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 50px;
+    text-align: center;
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+      width: 100%;
+      text-align: center;
+      line-height: 60px;
+    }
+    div {
+      position: static;
+      margin-top: 2rem;
+      left: 0;
+    }
+    button {
+      float: none;
+      display: block;
+      margin: 2rem auto;
+      padding: 0.7rem 0.7rem;
+    }
+  }
+  .btn {
+    display: none !important;
+  }
+}
+
+.spinner {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.875) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 80px;
+  }
+}

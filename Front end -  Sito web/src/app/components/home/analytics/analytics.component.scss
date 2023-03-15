@@ -1,0 +1,37 @@
+.bg {
+  background-image: url("../../../../assets/home/analytics/Grifo-Multimedia-Background-counter.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  div {
+    margin: 0 auto;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    p {
+      color: white;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 500;
+    }
+  }
+}
+.bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bg div {
+  text-align: center;
+  margin: 40px;
+}
+
+@media screen and (max-width: 1168px) {
+  .bg {
+    margin-top: -40px;
+    display: block;
+  }
+}

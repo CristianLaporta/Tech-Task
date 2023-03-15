@@ -1,0 +1,97 @@
+<div *ngIf="portfolio == false" class="spinner">
+  <img src="../../../../assets/spinner.gif" alt="spinner">
+</div>
+
+
+
+<div *ngIf="portfolio.length != 0" id="portfolio" class="portfolio">
+  <h2>Portfolio</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img [src]="portfolio[0].img" alt="Image 1" class="card-img-top">
+          <div class="card-overlay">
+            <h5 class="card-title">{{portfolio[0].title}}</h5>
+            <p class="card-text">{{portfolio[0].subtitle}}</p>
+            <span class="btn">
+              <img src="../../../../assets/home/portfolio/icon/2.png" alt="1">
+              <img src="../../../../assets/home/portfolio/icon/1.png" alt="1">
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img [src]="portfolio[1].img" alt="Image 1" class="card-img-top">
+          <div class="card-overlay">
+            <h5 class="card-title">{{portfolio[1].title}}</h5>
+            <p class="card-text">{{portfolio[1].subtitle}}</p>
+            <span class="btn">
+              <img src="../../../../assets/home/portfolio/icon/2.png" alt="1">
+              <img src="../../../../assets/home/portfolio/icon/1.png" alt="1">
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img [src]="portfolio[2].img" alt="Image 1" class="card-img-top">
+          <div class="card-overlay">
+            <h5 class="card-title">{{portfolio[2].title}}</h5>
+            <p class="card-text">{{portfolio[2].subtitle}}</p>
+            <span class="btn">
+              <img src="../../../../assets/home/portfolio/icon/2.png" alt="1">
+              <img src="../../../../assets/home/portfolio/icon/1.png" alt="1">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img [src]="portfolio[3].img" alt="Image 1" class="card-img-top">
+          <div class="card-overlay">
+            <h5 class="card-title">{{portfolio[3].title}}</h5>
+            <p class="card-text">{{portfolio[3].subtitle}}</p>
+            <span class="btn">
+              <img src="../../../../assets/home/portfolio/icon/2.png" alt="1">
+              <img src="../../../../assets/home/portfolio/icon/1.png" alt="1">
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img [src]="portfolio[4].img" alt="Image 1" class="card-img-top">
+          <div class="card-overlay">
+            <h5 class="card-title">{{portfolio[4].title}}</h5>
+            <p class="card-text">{{portfolio[4].subtitle}}</p>
+            <span class="btn">
+              <img src="../../../../assets/home/portfolio/icon/2.png" alt="1">
+              <img src="../../../../assets/home/portfolio/icon/1.png" alt="1">
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img [src]="portfolio[5].img" alt="Image 1" class="card-img-top">
+          <div class="card-overlay">
+            <h5 class="card-title">{{portfolio[5].title}}</h5>
+            <p class="card-text">{{portfolio[5].subtitle}}</p>
+            <span class="btn">
+              <img src="../../../../assets/home/portfolio/icon/2.png" alt="1">
+              <img src="../../../../assets/home/portfolio/icon/1.png" alt="1">
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat for 2 more cards -->
+    </div>
+  </div>
+</div>

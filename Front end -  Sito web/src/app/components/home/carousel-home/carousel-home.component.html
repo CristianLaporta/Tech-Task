@@ -1,0 +1,24 @@
+<!-- markup per il caricamento delle slide -->
+<div class="spinner" *ngIf="slides.length == 0">
+  <img src="../../../../assets/spinner.gif" alt="spinner">
+</div>
+
+
+
+<ngb-carousel id="carouselhome" class="fade-in" *ngIf="slides.length != 0" #carousel [showNavigationArrows]="false"
+  [interval]="0">
+  <ng-template *ngFor="let slide of slides" ngbSlide>
+    <div class="slide-container" style="background-image: url('{{slide.img}}')">
+      <div class="animate__animated animate__backInRight" [ngClass]="{'fade-out': fadeout}">
+        <h1 [innerHTML]="slide.html"></h1>
+        <button>{{slide.textbtn}}</button>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<!--  bottoni slide manuali  -->
+<div *ngIf="slides.length != 0">
+  <button id="next" class="btn" (click)="slideBtn('prev')"><i class="bi bi-chevron-left"></i></button>
+  <button id="prev" class="btn" (click)="slideBtn('next')"><i class="bi bi-chevron-right"></i></button>
+</div>

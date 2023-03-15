@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~animate.css/animate.css';
+
+//classe globale per le slide della home
+.txtred {
+  color: #b7232b !important;
+  text-shadow: 2px 1px 1px rgb(255, 255, 255)!important;
+}
+body{
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}

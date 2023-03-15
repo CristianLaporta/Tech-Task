@@ -1,0 +1,8 @@
+<div>
+  <div *ngIf="partner" class="partner">
+    <img *ngFor="let img of partner" [src]="img.img" alt="partner">
+  </div>
+</div>
+<div *ngIf="partner== false" class="spinner">
+  <img src="../../../../assets/spinner.gif" alt="spinner">
+</div>

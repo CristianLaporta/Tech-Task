@@ -1,0 +1,99 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #16171d;
+  margin-top: -35px;
+}
+.logo {
+  width: 30%;
+  padding-top: 10px;
+}
+
+.title {
+  font: {
+    family: Cairo, sans-serif;
+    size: 23px;
+    line-height: 26px;
+    weight: 700;
+    style: normal;
+  }
+  letter-spacing: -0.4px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.adress,
+.ora,
+.contact-text,
+.info,
+.tell,
+.contact-text-b {
+  font: {
+    family: Cairo, sans-serif;
+    size: 14px;
+    line-height: 23px;
+    weight: 300;
+    style: normal;
+  }
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.adress,
+.ora {
+  color: #949494;
+}
+
+.contact-text,
+.info,
+.tell,
+.contact-text-b {
+  color: #5d5d5d;
+}
+
+.italia {
+  margin-right: 80px;
+  width: 80%;
+}
+
+.submit-button {
+  background-color: #b7232b;
+  border: none;
+  padding: 5px 20px 5px 20px;
+  font-family: Cairo;
+  font-size: 14px;
+  color: white;
+  margin-top: 10px;
+}
+.about {
+  margin-left: -400px;
+}
+
+.subscribe {
+  color: white;
+}
+@media screen and (max-width: 898px) {
+  div {
+    display: block !important;
+    padding-left: 10%;
+  }
+
+  .footer {
+    margin-top: 150px;
+  }
+  .submit-button {
+    margin-bottom: 20px;
+  }
+  .logo {
+    width: 40%;
+  }
+  .about {
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 1408px) {
+  .about {
+    margin-left: 0px;
+  }
+}
