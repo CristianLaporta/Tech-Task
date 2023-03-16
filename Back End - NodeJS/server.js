@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "lollerlol211",
-  database: "grifo",
+  password: "password",
+  database: "database",
   charset: "utf8mb4",
 });
 const port = 8445;
