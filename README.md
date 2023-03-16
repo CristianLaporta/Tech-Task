@@ -6,5 +6,5 @@
 <h4>Chat virtuale</h4>
 <img src="Foto/chat.gif" >
 <br>
-<h4>Pannello di controllo (Demo):</h4>
+<h4>Pannello di controllo:</h4>
 <img src="Foto/admin.png" >
