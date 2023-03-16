@@ -32,7 +32,6 @@ export class HttprequestService {
   postMessageChat(message: any): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const options = { headers: headers };
-    console.log(message)
     return this.http.post<any>(this.apiUrl + "chatbot", { message: message }, options);
   }
   getCarouselCompanies(): Observable<any> {
@@ -47,4 +46,6 @@ export class HttprequestService {
     const options = { headers: headers };
     return this.http.post<any>(this.apiUrl + "contacts", { message: message, name: name, email: email }, options);
   }
+
+  
 }

@@ -1,16 +1,43 @@
 <h2>Tutte le slide</h2>
+<br>
+<button type="button" (click)="crea()" class="btn btn-primary">Crea una Slide</button>
+
 <div class="slide">
 <div class="row">
   <div class="col-md-4" *ngFor="let slide of slide">
     <div class="card">
       <img class="card-img-top" [src]="slide.img" alt="Slide image">
       <div class="card-body">
-        <h5 class="card-title">{{ slide.title }}</h5>
-        <p class="card-text">{{ slide.text }}, bottone: {{ slide.textbtn }}</p>
-        <button type="button" class="btn btn-primary">Modifica</button>
-        <button type="button" class="btn btn-primary">Elimina</button>
+        <h5 class="card-title"[innerHTML]="slide.html" ></h5>
+        <p class="card-text"> bottone: {{ slide.textbtn }}</p>
+        <button type="button"(click)="openModal(modifica,slide.img,slide.text,slide.id,slide.linkbtn,slide.textbtn)" class="btn btn-primary">Modifica</button>
+        <button type="button" (click)="erase(slide.id)" class="btn btn-danger">Elimina</button>
       </div>
     </div>
   </div>
 </div>
 </div>
+<ng-template #modifica>
+  <div class="modal-header">
+    <h4 class="modal-title">Modifica Slide</h4>
+  </div>
+  <div class="modal-body">
+<p>Modifica link Immagine</p>
+<textarea [(ngModel)]="linkmod"  class="text" name="link" cols="1" rows="1"></textarea>
+<br>
+<p>Modifica testo Slide</p>
+<span>
+  <button (click)="addRed()">Testo rosso</button> <button (click)="addSpace()">A capo obbligatorio</button>
+</span>
+<textarea [(ngModel)]="textmod"  id="text" class="text" cols="30" rows="10"></textarea>
+<br>
+<p>Modifica Link del bottone</p>
+<textarea [(ngModel)]="btnmod"class="text" cols="1" rows="1"></textarea>
+<br>
+<p>Modifica testo del bottone</p>
+<textarea [(ngModel)]="btntextmod"class="text" cols="1" rows="1"></textarea>
+  </div>
+  <div class="modal-footer">
+    <button type="button" (click)="save()" class="btn btn-outline-dark">Salva</button>
+  </div>
+</ng-template>

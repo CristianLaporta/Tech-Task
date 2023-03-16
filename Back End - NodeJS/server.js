@@ -12,9 +12,9 @@ app.use(cors());
 app.use(bodyParser.json());
 var con = mysql.createConnection({
   host: "localhost",
-  user: "metti il tuo username",
-  password: "la tua password",
-  database: "il tuo database",
+  user: "root",
+  password: "lollerlol211",
+  database: "grifo",
   charset: "utf8mb4",
 });
 const port = 8445;
@@ -22,7 +22,7 @@ const port = 8445;
 
 
 app.get("/api/slide/", function (request, response) {
-  con.query("SELECT * FROM slide", function (err, risposta) {
+  con.query("SELECT * FROM slide ORDER BY id DESC", function (err, risposta) {
     if(err){
       console.log(err)
     }
@@ -80,7 +80,7 @@ app.post("/api/contacts/", function (request, response) {
 });
 // chiamate del pannello di controllo admin
 app.get("/api/adminmessage/", function (request, response) {
-  con.query("SELECT * FROM contacts", function (err, risposta) {
+  con.query("SELECT * FROM contacts ORDER BY id DESC", function (err, risposta) {
     if(err){
       console.log(err)
     }
@@ -89,7 +89,7 @@ app.get("/api/adminmessage/", function (request, response) {
 });
 
 app.get("/api/adminchatbot/", function (request, response) {
-  con.query("SELECT * FROM chatbot", function (err, risposta) {
+  con.query("SELECT * FROM chatbot ORDER BY id DESC", function (err, risposta) {
     if(err){
       console.log(err)
     }
@@ -97,8 +97,94 @@ app.get("/api/adminchatbot/", function (request, response) {
   });
 });
 
+app.get("/api/admincreateslide/", function (request, response) {
+  con.query("INSERT INTO `slide` (`id`, `text`, `linkbtn`, `textbtn`, `img`) VALUES (NULL, 'Nuova slide', '/', 'Scopri!', 'https://www.grifomultimedia.it/wp-content/uploads/2022/04/slide-1-digital-mindset.jpg');", function (err, risposta) {
+    if(err){
+      console.log(err)
+    }
+    response.json(risposta);
+  });
+});
 
+app.put("/api/adminmodslide/", function (request, response) {
+  const sql = "UPDATE `slide` SET `text` = ?, `linkbtn` = ?, `textbtn` = ?, `img` = ? WHERE `slide`.`id` = ?";
+  const values = [request.body.txt, request.body.linkbtn, request.body.textbtn, request.body.linkimg, request.body.id];
+  con.query(sql, values, function (err, risposta) {
+    if (err) {
+      console.log(err);
+      return response.status(500).json("error");
+    }
+    response.json("ok");
+  });
+});
 
+app.delete('/api/deleteslide/:id', async (request, response) => {
+  const slideId = request.params.id;
+  con.query('DELETE FROM `slide` WHERE `id` = ?', [slideId], function (err, risposta) {
+    if(err){
+      console.log(err)
+    }
+    response.json("ok");
+  });
+});
+
+app.delete('/api/deletepartners/:id', async (request, response) => {
+  const slideId = request.params.id;
+  con.query('DELETE FROM `partner` WHERE `id` = ?', [slideId], function (err, risposta) {
+    if(err){
+      console.log(err)
+    }
+    response.json("ok");
+  });
+});
+
+app.delete('/api/deleteresponse/:id', async (request, response) => {
+  const slideId = request.params.id;
+  con.query('DELETE FROM `chatbot` WHERE `id` = ?', [slideId], function (err, risposta) {
+    if(err){
+      console.log(err)
+    }
+    response.json("ok");
+  });
+});
+
+app.post("/api/adminslidepartcreate/", function (request, response) {
+  const sql = "INSERT INTO `partner` (`id`, `img`, `name`) VALUES (?, ?, ?)";
+  const values = [null, request.body.link, "azienda"];
+
+  con.query(sql, values, function (err, risposta) {
+    if (err) {
+      console.log(err);
+      return response.status(500).json({ error: "Errore interno del server" });
+    }
+    response.json("ok");
+  });
+});
+
+app.post("/api/adminslidquestchatcreate/", function (request, response) {
+  const sql = "INSERT INTO `chatbot` (`id`, `quest`, `resp`) VALUES (?, ?, ?)";
+  const values = [null, request.body.domanda, request.body.risposta];
+
+  con.query(sql, values, function (err, risposta) {
+    if (err) {
+      console.log(err);
+      return response.status(500).json({ error: "Errore interno del server" });
+    }
+    response.json("ok");
+  });
+});
+
+app.put("/api/adminmodportfolio/", function (request, response) {
+  const sql = "UPDATE `portfolio` SET `title` = ?, `subtitle` = ?, `img` = ? WHERE `portfolio`.`id` = ?";
+  const values = [request.body.title, request.body.subtitle, request.body.linkimg,  request.body.id];
+  con.query(sql, values, function (err, risposta) {
+    if (err) {
+      console.log(err);
+      return response.status(500).json("error");
+    }
+    response.json("ok");
+  });
+});
 //metto in ascolto il nostro server node js in modo tale che quando avvio il server rimane avviato e risponde alle richieste.
 app.listen(port, () => {
   console.log(

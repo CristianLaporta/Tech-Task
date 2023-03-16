@@ -4,9 +4,12 @@
 
 
 
-<div *ngIf="portfolio.length != 0" id="portfolio" class="portfolio">
+<div  *ngIf="portfolio.length != 0" id="portfolio" class="portfolio">
   <h2>Portfolio</h2>
-  <div class="container">
+  <div #container class="anim">
+
+
+  <div  class="container">
     <div class="row">
       <div class="col-md-4">
         <div class="card">
@@ -94,4 +97,5 @@
       <!-- Repeat for 2 more cards -->
     </div>
   </div>
+</div>
 </div>

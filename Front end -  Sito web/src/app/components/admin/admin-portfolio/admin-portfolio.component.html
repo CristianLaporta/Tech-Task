@@ -7,10 +7,29 @@
       <div class="card-body">
         <h5 class="card-title">{{ portfolio.title }}</h5>
         <p class="card-text">{{ portfolio.subtitle}}</p>
-        <button type="button" class="btn btn-primary">Modifica</button>
-        <button type="button" class="btn btn-primary">Elimina</button>
+        <button type="button" (click)="openmodal(modifica,portfolio.id,portfolio.title,portfolio.subtitle,portfolio.img)" class="btn btn-primary">Modifica</button>
       </div>
     </div>
   </div>
 </div>
 </div>
+<ng-template #modifica>
+  <div class="modal-header">
+    <h4 class="modal-title">Modifica Portfolio</h4>
+  </div>
+  <div class="modal-body">
+<p>Modifica link Immagine</p>
+<textarea [(ngModel)]="linkmod"  class="text" name="link" cols="1" rows="1"></textarea>
+<br>
+<p>Modifica Titolo</p>
+<textarea [(ngModel)]="titlemod"class="text" cols="1" rows="1"></textarea>
+<p>Modifica testo Slide</p>
+<textarea [(ngModel)]="textmod"  id="text" class="text" cols="30" rows="10"></textarea>
+
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" (click)="save()" class="btn btn-outline-dark">Salva</button>
+  </div>
+</ng-template>

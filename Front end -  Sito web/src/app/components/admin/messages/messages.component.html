@@ -1,10 +1,13 @@
-<div>
-  <h2>Tutti i messaggi </h2>
-  <br>
-  <div *ngFor="let mess of message">
-    <p>Nome Cognome: {{mess.name}}</p>
-    <p>Email: {{mess.email}}</p>
-    <p>Messaggio: {{mess.message}}</p>
-    <hr>
+<div class="container">
+  <h2>Tutti i messaggi</h2>
+  <hr>
+  <div class="card" *ngFor="let mess of message">
+    <div class="card-header">
+      <h5 class="card-title">{{mess.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{mess.email}}</h6>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{mess.message}}</p>
+    </div>
   </div>
 </div>

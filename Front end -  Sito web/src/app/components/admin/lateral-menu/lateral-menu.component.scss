@@ -11,3 +11,20 @@ p{
   color: white;
   margin-left: 30px;
 }
+@media screen and (max-width: 898px) {
+  #menu{
+    display: none;
+  }
+  }
+.menumobile{
+  background-color: rgb(21, 21, 21);
+  text-align: center;
+ p{
+  margin-bottom: 40px;
+ }
+}
+@media screen and (min-width: 898px) {
+  .menumobile{
+    display: none;
+  }
+  }
