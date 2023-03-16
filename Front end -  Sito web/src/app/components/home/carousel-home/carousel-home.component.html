@@ -11,7 +11,7 @@
     <div class="slide-container" style="background-image: url('{{slide.img}}')">
       <div class="animate__animated animate__backInRight" [ngClass]="{'fade-out': fadeout}">
         <h1 [innerHTML]="slide.html"></h1>
-        <button>{{slide.textbtn}}</button>
+        <button><a href="{{slide.linkbtn}}" target="_blank"> {{slide.textbtn}}</a></button>
       </div>
     </div>
   </ng-template>

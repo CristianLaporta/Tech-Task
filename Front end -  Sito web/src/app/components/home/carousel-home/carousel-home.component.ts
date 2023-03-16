@@ -9,7 +9,7 @@ import { HttprequestService } from 'src/app/services/httprequest.service';
 })
 export class CarouselHomeComponent {
   @ViewChild(NgbCarousel) carousel!: NgbCarousel;
-  slides: { text: string, textbtn: string, img: string, html: HTMLElement }[] = [];
+  slides: { text: string, textbtn: string, img: string, html: HTMLElement ,linkbtn:string}[] = [];
   fadeout = false;
   timerInterval = 8000;
   private timer: any;

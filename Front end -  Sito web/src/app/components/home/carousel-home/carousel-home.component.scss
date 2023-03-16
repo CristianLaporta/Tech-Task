@@ -41,6 +41,10 @@
     background-color: rgb(255, 255, 255);
     color: #b7232b;
     opacity: 1;
+    a {
+      text-decoration: none;
+      color: #b7232b;
+    }
   }
 }
 
@@ -143,4 +147,8 @@
   img {
     width: 80px;
   }
+}
+a {
+  text-decoration: none;
+  color: white;
 }
